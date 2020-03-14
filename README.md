@@ -29,11 +29,11 @@ http://localhost:8080
 
 ### Login Page
 
-![Login Page](master/images/login.png)
+![Login Page](https://github.com/Diaminho/chat/blob/master/images/login.png)
 
 ### Chat window
 
-![Chat window](master/images/chat.png)
+![Chat window](https://github.com/Diaminho/chat/blob/master/images/chat.png)
 
 ## Testing
 
