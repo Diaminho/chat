@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+  rabbit:
+    build: rabbit/
+    hostname: rabbit
+    ports:
+      - "15672:15672"
+      - "5671:5671"
+      - "61613:61613"
+
+  chat:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rabbit
+    links:
+      - rabbit
