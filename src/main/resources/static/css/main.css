@@ -27,7 +27,7 @@ body:before {
     position: absolute;
     top: 0;
     left: 0;
-    background: grey;
+    background: #000000;
     content: "";
     z-index: 0;
 }
@@ -68,41 +68,38 @@ h1 {
 }
 
 a {
-    color: grey;
+    color: #000000;
 }
 
-button {
-    box-shadow: none;
-    border: 1px solid transparent;
-    font-size: 14px;
-    outline: none;
-    line-height: 100%;
-    white-space: nowrap;
-    vertical-align: middle;
-    padding: 0.6rem 1rem;
-    border-radius: 2px;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
+button{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #000000;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color: #000000;
+    text-align:center;
+    transition: all 0.2s;
     min-height: 38px;
 }
 
-button.default {
-    background-color: #e8e8e8;
-    color: #333;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+button:hover{
+    color: #ffffff;
+    background-color:#000000;
 }
 
-button.primary {
-    background-color: grey;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-    color: #fff;
+@media all and (max-width:30em){
+     button{
+        display:block;
+        margin:0.4em auto;
+    }
 }
 
-button.accent {
-    background-color: darkgreen;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
-    color: #fff;
-}
+
 
 #username-page {
     text-align: center;
@@ -182,7 +179,7 @@ button.accent {
 }
 
 #chat-page .event-message p {
-    color: #777;
+    color: #000000;
     font-size: 14px;
     word-wrap: break-word;
 }
@@ -295,4 +292,17 @@ button.accent {
     .chat-header h2 {
         font-size: 1.1em;
     }
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 90%;
+}
+
+.right {
+    vertical-align: middle;
+    width: 10%;
 }

@@ -14,7 +14,7 @@ let username = null;
 function connect(event) {
     username = document.querySelector('#name').value.trim();
 
-    if(username) {
+    if (username) {
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
 
@@ -50,7 +50,11 @@ function onError(error) {
 function sendMessage(event) {
     let messageContent = messageInput.value.trim();
 
-    if(messageContent && stompClient) {
+    if (!messageContent) {
+        event.preventDefault();
+        return;
+    }
+    if (stompClient) {
         let chatMessage = {
             sender: username,
             content: messageInput.value,
@@ -112,5 +116,5 @@ function getAvatarColor() {
 }
 
 
-usernameForm.addEventListener('submit', connect, true)
-messageForm.addEventListener('submit', sendMessage, true)
+usernameForm.addEventListener('submit', connect, true);
+messageForm.addEventListener('submit', sendMessage, true);
