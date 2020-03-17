@@ -17,3 +17,13 @@ services:
       - rabbit
     links:
       - rabbit
+    command: >
+      /bin/sh -c "
+        echo Waiting for rabbit service start...;
+        while curl -s -o /dev/null --head -w "%{http_code}" "http://rabbit:15672" | grep -v 200;
+        do
+          sleep 1;
+        done;
+        echo Connected!;
+        java -jar app.jar
+      "

@@ -105,14 +105,17 @@ function onMessageReceived(payload) {
     messageArea.scrollTop = messageArea.scrollHeight;
 }
 
-
-function getAvatarColor() {
-    let letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+function getAvatarColor(login) {
+    let hash = 0;
+    for (let i = 0; i < login.length; i++) {
+        hash = login.charCodeAt(i) + ((hash << 5) - hash);
     }
-    return color;
+    let colour = '#';
+    for (let i = 0; i < 3; i++) {
+        let value = (hash >> (i * 8)) & 0xFF;
+        colour += ('00' + value.toString(16)).substr(-2);
+    }
+    return colour;
 }
 
 
